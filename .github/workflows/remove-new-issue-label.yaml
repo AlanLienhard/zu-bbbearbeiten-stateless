@@ -2,8 +2,7 @@ name: Remove Label on Assignment
 
 on:
   issues:
-    types:
-      - assigned
+    types: [assigned]
 
 jobs:
   remove-label:
@@ -15,11 +14,9 @@ jobs:
         with:
           script: |
             const issueNumber = context.issue.number;
-            const labelToRemove = 'label-to-remove';
-            
             github.rest.issues.removeLabel({
               issue_number: issueNumber,
               owner: context.repo.owner,
               repo: context.repo.repo,
-              name: ["status: new issue"]
+              name: "status:new issue"
             })
