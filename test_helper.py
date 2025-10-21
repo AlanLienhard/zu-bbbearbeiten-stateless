@@ -1,4 +1,3 @@
-# test_helper.py
 import helper
 
 
